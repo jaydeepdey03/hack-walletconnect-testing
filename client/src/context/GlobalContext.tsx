@@ -5,7 +5,16 @@ import {createWeb3Modal} from "@web3modal/wagmi/react";
 import {defaultWagmiConfig} from "@web3modal/wagmi/react/config";
 
 import {WagmiProvider} from "wagmi";
-import {baseSepolia} from "wagmi/chains";
+import {
+  arbitrumSepolia,
+  baseSepolia,
+  sepolia,
+  celoAlfajores,
+  avalancheFuji,
+  optimismSepolia,
+  gnosisChiado,
+  polygonAmoy,
+} from "wagmi/chains";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
@@ -26,7 +35,7 @@ const metadata = {
 // const chains = [sepolia] as const;
 
 const config = defaultWagmiConfig({
-  chains: [baseSepolia],
+  chains: [sepolia],
   projectId,
   metadata,
   auth: {
@@ -44,7 +53,7 @@ createWeb3Modal({
   enableOnramp: true, // Optional - false as default
 });
 
-const ContractAddress = "0x94Da51b64Dc2a214415b9F97EAdF2e0d76c6b1ee" as string;
+const ContractAddress = "0x78270122aE737d8d1C78744Fe0db04308a7a3CE9" as string;
 
 export function GlobalContextProvider({children}: {children: ReactNode}) {
   return (
